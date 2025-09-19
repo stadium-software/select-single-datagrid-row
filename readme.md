@@ -14,17 +14,16 @@ Check the *Enable Style Sheet* checkbox in the application properties
 ## Global Script Setup
 1. Create a Global Script and name it "SelectSingleRow"
 2. Add the input parameters below to the script
-   1. ClassToAttach
-   2. DataGridClass
-   3. DeselectCallbackScript
-   4. IDColumn
-   5. RowIDValue
+   1. DataGridClass
+   2. DeselectCallbackScript
+   3. IDColumn
+   4. RowIDValue
 3. Drag a Javascript action into the script and paste the Javascript below as is into the action
 ```javascript
 /* Stadium Script v1.0 https://github.com/stadium-software/select-single-datagrid-row */
 let scope = this;
 let dgClassInput = ~.Parameters.Input.DataGridClass;
-let className = ~.Parameters.Input.ClassToAttach;
+let className = 'selected-row';
 let idColumn = ~.Parameters.Input.IDColumn;
 let idValue = ~.Parameters.Input.RowIDValue;
 let callbackScriptName = ~.Parameters.Input.DeselectCallbackScript || "";
@@ -137,11 +136,10 @@ function getColumnNumber() {
 ## Column.Click Setup
 1. Drag the global script "SelectSingleRow" into the Column.Click event handler
 2. Map the input parameters as below
-   1. ClassToAttach: The class name to apply to the selected row (e.g. show-selected)
-   2. DataGridClass: The class name assigned to the DataGrid control (e.g. selected-row)
-   3. DeselectCallbackScript (optional): The name of the script on the page to call when a row is de-selected (e.g. ProcessDeSelected)
-   4. IDColumn: The name of the column in the DataGrid that contains a unique value for each row (e.g. ID)
-   5. RowIDValue: The value of the unique column for the clicked row (e.g. ~.Parameters.Input.ClickedRow.ID)
+   1. DataGridClass: The class name assigned to the DataGrid control (e.g. selected-row)
+   2. DeselectCallbackScript (optional): The name of the script on the page to call when a row is de-selected (e.g. ProcessDeSelected)
+   3. IDColumn: The name of the column in the DataGrid that contains a unique value for each row (e.g. ID)
+   4. RowIDValue: The value of the unique column for the clicked row (e.g. ~.Parameters.Input.ClickedRow.ID)
 
 ![](images/ColumnClick.png)
 
