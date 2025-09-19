@@ -128,11 +128,18 @@ function getColumnNumber() {
 
 ![](images/DGClass.png)
 
-
 ## Page Script
 1. Add a script to the page
 2. Add an input parameter to the script (e.g. RowData)
 3. Add whatever logic in the script that is needed when a row is de-selected
 
 ## Column.Click Setup
-1. 
+1. Drag the global script "SelectSingleRow" into the Column.Click event handler
+2. Map the input parameters as below
+   1. ClassToAttach - The class name to apply to the selected row (e.g. selected)
+   2. DataGridClass - The class name assigned to the DataGrid control (e.g. select-row)
+   3. DeselectCallbackScript - The name of the script on the page to call when a row is de-selected (e.g. onRowDeselect)
+   4. IDColumn - The name of the column in the DataGrid that contains a unique value for each row (e.g. id)
+   5. RowIDValue - The value of the unique column for the clicked row (e.g. ~.RowData.id)
+
+![](images/ColumnClick.png)
