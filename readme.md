@@ -144,3 +144,8 @@ function getColumnNumber() {
    5. RowIDValue: The value of the unique column for the clicked row (e.g. ~.Parameters.Input.ClickedRow.ID)
 
 ![](images/ColumnClick.png)
+
+# Upgrading Stadium Repos
+Stadium Repos are not static. They change as additional features are added and bugs are fixed. Using the right method to work with Stadium Repos allows for upgrading them in a controlled manner. 
+
+How to use and update application repos is described here: [Working with Stadium Repos](https://github.com/stadium-software/samples-upgrading)
