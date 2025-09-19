@@ -51,10 +51,6 @@ if (!idValue) {
     console.error("The SelectedRowValue parameter is required");
     return false;
 }
-if (!className) {
-    console.error("The ClassName parameter is required");
-    return false;
-}
 let idColumnNumber = getColumnNumber();
 let tries = 0;
 let wait = async (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
