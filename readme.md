@@ -19,8 +19,7 @@ Check the *Enable Style Sheet* checkbox in the application properties
    3. DeselectCallbackScript
    4. IDColumn
    5. RowIDValue
-3. Drag a Javascript action into the script and paste the Javascript below into the action
-4. Do not make any changes to any of this script
+3. Drag a Javascript action into the script and paste the Javascript below as is into the action
 ```javascript
 /* Stadium Script v1.0 https://github.com/stadium-software/select-single-datagrid-row */
 let scope = this;
@@ -132,6 +131,8 @@ function getColumnNumber() {
 1. Add a script to the page
 2. Add an input parameter to the script (e.g. RowData)
 3. Add whatever logic in the script that is needed when a row is de-selected
+
+![](images/ProcessDeselected.png)
 
 ## Column.Click Setup
 1. Drag the global script "SelectSingleRow" into the Column.Click event handler
