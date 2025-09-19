@@ -107,7 +107,7 @@ function deselectAll() {
     observer.disconnect();
     let selectedRow = tbody.querySelector("." + className);
     if (selectedRow) selectedRow.classList.remove(className);
-    if (typeof window.dgSelectedRowID === "function") { 
+    if (callbackScriptName && typeof window.dgSelectedRowID === "function") { 
         scriptCaller(callbackScriptName, window.dgSelectedRowID());
         delete window.dgSelectedRowID;
     }
@@ -137,10 +137,10 @@ function getColumnNumber() {
 ## Column.Click Setup
 1. Drag the global script "SelectSingleRow" into the Column.Click event handler
 2. Map the input parameters as below
-   1. ClassToAttach - The class name to apply to the selected row (e.g. selected)
-   2. DataGridClass - The class name assigned to the DataGrid control (e.g. select-row)
-   3. DeselectCallbackScript - The name of the script on the page to call when a row is de-selected (e.g. onRowDeselect)
-   4. IDColumn - The name of the column in the DataGrid that contains a unique value for each row (e.g. id)
-   5. RowIDValue - The value of the unique column for the clicked row (e.g. ~.RowData.id)
+   1. ClassToAttach: The class name to apply to the selected row (e.g. show-selected)
+   2. DataGridClass: The class name assigned to the DataGrid control (e.g. selected-row)
+   3. DeselectCallbackScript (optional): The name of the script on the page to call when a row is de-selected (e.g. ProcessDeSelected)
+   4. IDColumn: The name of the column in the DataGrid that contains a unique value for each row (e.g. ID)
+   5. RowIDValue: The value of the unique column for the clicked row (e.g. ~.Parameters.Input.ClickedRow.ID)
 
 ![](images/ColumnClick.png)
